@@ -8,6 +8,8 @@ define('KUNL', realpath('./'));
 define('CORE', KUNL.'/core');
 define('APP', KUNL.'/app');
 
+define('MODULE', 'app');
+
 define('DEBUG', true);
 
 if(DEBUG) {
@@ -16,8 +18,11 @@ if(DEBUG) {
     ini_set('display_error', 'Off');
 }
 
-include(CORE.'/common/function.php');
+include CORE.'/common/function.php';
 
-include(CORE.'/kunl.php');
+
+include CORE.'/kunl.php' ;
+
+spl_autoload_register('core\kunl::load');
 
 \core\kunl::run();
