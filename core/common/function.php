@@ -6,6 +6,6 @@ function p($var) {
     } else if(is_null($var)) {
         var_dump(NULL);
     } else {
-        echo "则是 $var";
+        print_r($var);
     }
 }
